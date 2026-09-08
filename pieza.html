@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Visor de Pieza 3D - Laboratorio RV</title>
     <!-- ENLACE CDN OFICIAL CORREGIDO -->
-     <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
+     <script src="https://aframe.io"></script>
     <style>
       /* Botón flotante para regresar al menú principal */
       .back-button {
@@ -26,6 +26,10 @@
         background-color: #928dab;
         color: black;
       }
+      /* Fuerza al lienzo de la escena a renderizar un fondo blanco */
+      a-scene {
+        background-color: #FFFFFF;
+      }
     </style>
   </head>
   <body>
@@ -33,19 +37,17 @@
     <!-- Botón de retorno al menú -->
     <a href="index.html" class="back-button">⬅ Volver al Menú</a>
 
-    <a-scene>
+    <!-- CORRECCIÓN: Se agrega background="color: #FFFFFF" a la escena y se quita el a-sky -->
+    <a-scene background="color: #FFFFFF">
       <!-- SISTEMA DE GESTIÓN DE RECURSOS (Precarga tu archivo .glb) -->
       <a-assets>
         <a-asset-item id="modeloUnico" src="pieza.glb"></a-asset-item>
       </a-assets>
 
-      <!-- ENTORNO Y LUCES PARA RESALTAR EL MODELO -->
-      <a-sky color="#1a1a1a"></a-sky>
-
       <!-- CÁMARA CON CONTROLES (Te ubica de frente al objeto) -->
       <a-camera position="0 1.5 3"></a-camera>
 
-      <!-- CORRECCIÓN: Se eliminó el atributo 'animation' para dejar la pieza estática -->
+      <!-- MODELO ESTÁTICO -->
       <a-gltf-model src="#modeloUnico" 
                     position="0 1.2 0" 
                     scale="1 1 1">
