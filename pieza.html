@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Visor de Pieza 3D - Laboratorio RV</title>
+    <!-- ENLACE CDN OFICIAL CORREGIDO -->
+     <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
+    <style>
+      /* Botón flotante para regresar al menú principal */
+      .back-button {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 9999;
+        padding: 10px 20px;
+        background-color: #333333;
+        color: white;
+        text-decoration: none;
+        font-family: sans-serif;
+        font-weight: bold;
+        border-radius: 5px;
+        border: 2px solid #928dab;
+        transition: 0.3s;
+      }
+      .back-button:hover {
+        background-color: #928dab;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Botón de retorno al menú -->
+    <a href="index.html" class="back-button">⬅ Volver al Menú</a>
+
+    <a-scene>
+      <!-- SISTEMA DE GESTIÓN DE RECURSOS (Precarga tu archivo .glb) -->
+      <a-assets>
+        <!-- REQUISITO: Cambia 'tu-pieza.glb' por el nombre exacto de tu archivo subido a GitHub -->
+        <a-asset-item id="modeloUnico" src="pieza.glb"></a-asset-item>
+      </a-assets>
+
+      <!-- ENTORNO Y LUCES PARA RESALTAR EL MODELO -->
+      <a-sky color="#1a1a1a"></a-sky>
+      
+      
+
+      <!-- CÁMARA CON CONTROLES (Te ubica de frente al objeto) -->
+      <a-camera position="0 1.5 3"></a-camera>
+
+      <!-- CONTENEDOR DEL MODELO CON ROTACIÓN AUTOMÁTICA -->
+      <!-- Si el modelo se ve muy grande o chico, ajusta el parámetro 'scale' (ej: 0.5 0.5 0.5) -->
+      <a-gltf-model src="#modeloUnico" 
+                    position="0 1.2 0" 
+                    scale="1 1 1"
+                    animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear">
+      </a-gltf-model>
+    </a-scene>
+  </body>
+</html>
