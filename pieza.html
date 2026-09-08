@@ -36,24 +36,19 @@
     <a-scene>
       <!-- SISTEMA DE GESTIÓN DE RECURSOS (Precarga tu archivo .glb) -->
       <a-assets>
-        <!-- REQUISITO: Cambia 'tu-pieza.glb' por el nombre exacto de tu archivo subido a GitHub -->
         <a-asset-item id="modeloUnico" src="pieza.glb"></a-asset-item>
       </a-assets>
 
       <!-- ENTORNO Y LUCES PARA RESALTAR EL MODELO -->
       <a-sky color="#1a1a1a"></a-sky>
-      
-      
 
       <!-- CÁMARA CON CONTROLES (Te ubica de frente al objeto) -->
       <a-camera position="0 1.5 3"></a-camera>
 
-      <!-- CONTENEDOR DEL MODELO CON ROTACIÓN AUTOMÁTICA -->
-      <!-- Si el modelo se ve muy grande o chico, ajusta el parámetro 'scale' (ej: 0.5 0.5 0.5) -->
+      <!-- CORRECCIÓN: Se eliminó el atributo 'animation' para dejar la pieza estática -->
       <a-gltf-model src="#modeloUnico" 
                     position="0 1.2 0" 
-                    scale="1 1 1"
-                    animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear">
+                    scale="1 1 1">
       </a-gltf-model>
     </a-scene>
   </body>
