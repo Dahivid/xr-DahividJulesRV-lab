@@ -1,79 +1,44 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
+<html>
+  <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laboratorio RV - Menú Principal</title>
+    <title>Mi Primer Ejemplo RV</title>
+    <!-- ENLACE CDN OFICIAL CORREGIDO -->
+    <script src="https://aframe.io"></script>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1f1c2c, #928dab);
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        .menu-container {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-        }
-        h1 {
-            margin-bottom: 10px;
-            font-size: 2.5rem;
-        }
-        p {
-            color: #e0e0e0;
-            margin-bottom: 30px;
-        }
-        .btn {
-            display: block;
-            width: 250px;
-            padding: 15px;
-            margin: 15px auto;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        .btn-scene {
-            background-color: #4CC3D9;
-        }
-        .btn-scene:hover {
-            background-color: #3cb2c7;
-            transform: translateY(-3px);
-        }
-        .btn-industrial {
-            background-color: #FF851B;
-        }
-        .btn-industrial:hover {
-            background-color: #e07315;
-            transform: translateY(-3px);
-        }
+      /* Botón flotante para regresar al menú principal */
+      .back-button {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 9999;
+        padding: 10px 20px;
+        background-color: #333333;
+        color: white;
+        text-decoration: none;
+        font-family: sans-serif;
+        font-weight: bold;
+        border-radius: 5px;
+        border: 2px solid #4CC3D9;
+        transition: 0.3s;
+      }
+      .back-button:hover {
+        background-color: #4CC3D9;
+        color: black;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
 
-    <div class="menu-container">
-        <h1>Laboratorio de RV</h1>
-        <p>Selecciona la experiencia que deseas cargar:</p>
-        
-        <!-- Botón para la escena básica original si quieres recrearla luego -->
-        <a href="index.html" class="btn btn-scene" onclick="alert('Aquí puedes enlazar otra escena si creas un archivo para ella'); return false;">Escena Básica Inicial</a>
-        
-        <!-- Botón que lleva a la simulación industrial -->
-        <a href="industrial.html" class="btn btn-industrial">Zona Industrial Interactiva</a>
-    </div>
+    <!-- Botón HTML en la interfaz 2D -->
+    <a href="index.html" class="back-button">⬅ Volver al Menú</a>
 
-</body>
+    <a-scene>
+      <a-box position="0 1 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-sphere position="2 1 -4" radius="1" color="#EF2D5E"></a-sphere>
+      <a-cylinder position="-2 1 -4" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      <a-plane rotation="-90 0 0" width="10" height="10" color="#7BC8A4"></a-plane>
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+  </body>
 </html>
